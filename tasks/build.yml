@@ -41,7 +41,7 @@
     group: "{{ item.group | default(omit) }}"
     groups: "{{ item.groups | default([ ]) | join(',') | default(omit) }}"
     name: "{{ item.name }}"
-    non_unique: "{{ item.non_unique | default(no) }}"
+    non_unique: "{{ item.non_unique | default('no') }}"
     password: "{{ item.password | default(omit) }}"
     remove: "{{ 'yes' if item.state is defined and item.state == 'absent' else 'no' }}"
     shell: "{{ item.shell | default('/bin/bash') }}"
